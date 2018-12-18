@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 
-import Message from "./message/SimpleMessage";
+import ChatRoom from "./chatRoom/SimpleChatRoom";
 
 class App extends Component {
+  state = {
+    messages: ["Hello", "Hi", "Hello", "Hi", "Hello", "hi"]
+  };
   render() {
     return (
       <div className="App container">
-        <Message message="Hello" />
+        <div className="row">
+          <div className="col l5">
+            <ChatRoom messages={this.state.messages} />
+          </div>
+        </div>
       </div>
     );
   }

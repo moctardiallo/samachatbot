@@ -5,7 +5,7 @@ import Image from "./image/profile.jpg";
 
 const Message = ({ message }) => {
   return (
-    <div>
+    <div className="section">
       <Chip>
         <img src={Image} />
         {message}
