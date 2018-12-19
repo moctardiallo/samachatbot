@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 class ChatRoom extends React.Component {
   sendMessage = e => {
     e.preventDefault();
-    this.props.addMessage(document.getElementById("message"));
+    this.props.addMessage(document.getElementById("message").value);
     document.getElementById("message").value = "";
   };
   render() {
