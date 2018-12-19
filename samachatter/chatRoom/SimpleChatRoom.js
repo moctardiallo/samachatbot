@@ -2,6 +2,8 @@ import React from "react";
 
 import Message from "../message/SimpleMessage";
 
+import { connect } from "react-redux";
+
 class ChatRoom extends React.Component {
   sendMessage = e => {
     e.preventDefault();
@@ -11,13 +13,18 @@ class ChatRoom extends React.Component {
   render() {
     return (
       <div className="row section">
-        {this.props.messages.map((message, index) => {
-          return (
-            <div className={"col" + (index % 2 ? " l12" : " l6 offset-l6")}>
-              <Message message={message} className="offset-s3" />
-            </div>
-          );
-        })}
+        {this.props.messages &&
+          this.props.messages.map((message, index) => {
+            return (
+              <div className={"col" + (index % 2 ? " l12" : " l6 offset-l6")}>
+                <Message
+                  message={message.content}
+                  className="offset-s3"
+                  key={message.id}
+                />
+              </div>
+            );
+          })}
         <div className="col l12 input-field">
           <form onSubmit={this.sendMessage}>
             <input type="text" placeholder="Say something" id="message" />
@@ -28,4 +35,10 @@ class ChatRoom extends React.Component {
   }
 }
 
-export default ChatRoom;
+const mapStateToProps = state => {
+  return {
+    messages: state.messages
+  };
+};
+
+export default connect(mapStateToProps)(ChatRoom);
