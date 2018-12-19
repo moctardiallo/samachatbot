@@ -1,7 +1,7 @@
 import React from "react";
 
 import Message from "../message/SimpleMessage";
-import addMessage from "./addMessage/SimpleAddMessage";
+import addMessage from "./addMessage/SimpleActionAddMessage";
 
 import { connect } from "react-redux";
 
