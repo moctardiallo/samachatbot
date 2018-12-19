@@ -32,6 +32,10 @@ const initState = {
 };
 
 const reducer = (state = initState, action) => {
+  switch (action.type) {
+    case "ADD_MESSAGE":
+      console.log("message added", action.message);
+  }
   return state;
 };
 

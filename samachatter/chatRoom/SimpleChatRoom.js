@@ -1,13 +1,14 @@
 import React from "react";
 
 import Message from "../message/SimpleMessage";
+import addMessage from "./addMessage/SimpleAddMessage";
 
 import { connect } from "react-redux";
 
 class ChatRoom extends React.Component {
   sendMessage = e => {
     e.preventDefault();
-    console.log(document.getElementById("message").value);
+    this.props.addMessage(document.getElementById("message"));
     document.getElementById("message").value = "";
   };
   render() {
@@ -41,4 +42,13 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(ChatRoom);
+const mapDispatchToProps = dispatch => {
+  return {
+    addMessage: message => dispatch(addMessage(message))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ChatRoom);
