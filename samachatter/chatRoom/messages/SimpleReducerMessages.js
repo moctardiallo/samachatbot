@@ -1,12 +1,8 @@
 const initState = {
   messages: [
     {
-      id: 1,
+      id: "user1",
       content: "Hello"
-    },
-    {
-      id: 2,
-      content: "Hi"
     }
   ]
 };
@@ -19,6 +15,7 @@ const reducer = (state = initState, action) => {
         id: 8,
         content: action.message
       });
+    // if (newMessages.length > 6) newMessages.shift(1);
   }
   return {
     ...state,

@@ -1,0 +1,11 @@
+.chat-room {
+  top: 100px;
+  left: 200px;
+  overflow: auto;
+}
+
+.message-input {
+}
+
+.message {
+}

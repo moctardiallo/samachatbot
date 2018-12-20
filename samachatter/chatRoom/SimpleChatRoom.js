@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./SimpleChatRoom.css";
+
 import Message from "../message/SimpleMessage";
 import addMessage from "./addMessage/SimpleActionAddMessage";
 
@@ -13,23 +15,29 @@ class ChatRoom extends React.Component {
   };
   render() {
     return (
-      <div className="row section">
-        {this.props.messages &&
-          this.props.messages.map((message, index) => {
-            return (
-              <div className={"col" + (index % 2 ? " l12" : " l6 offset-l6")}>
-                <Message
-                  message={message.content}
-                  className="offset-s3"
-                  key={message.id}
-                />
-              </div>
-            );
-          })}
-        <div className="col l12 input-field">
-          <form onSubmit={this.sendMessage}>
-            <input type="text" placeholder="Say something" id="message" />
-          </form>
+      <div className="container">
+        <div className="chat-room row section ">
+          {this.props.messages &&
+            this.props.messages.map((message, index) => {
+              return (
+                <div
+                  className={
+                    "message col" + (index % 2 ? " l12" : " l6 offset-l6")
+                  }
+                >
+                  <Message
+                    message={message.content}
+                    className="offset-s3"
+                    key={message.id}
+                  />
+                </div>
+              );
+            })}
+          <div className="message-input col l12 input-field">
+            <form onSubmit={this.sendMessage}>
+              <input type="text" placeholder="Say something" id="message" />
+            </form>
+          </div>
         </div>
       </div>
     );
