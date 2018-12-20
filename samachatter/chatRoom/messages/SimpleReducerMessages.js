@@ -7,36 +7,23 @@ const initState = {
     {
       id: 2,
       content: "Hi"
-    },
-    {
-      id: 3,
-      content: "Hello"
-    },
-    {
-      id: 4,
-      content: "Hi"
-    },
-    {
-      id: 5,
-      content: "Hello"
-    },
-    {
-      id: 6,
-      content: "hi"
-    },
-    {
-      id: 7,
-      content: "Hey"
     }
   ]
 };
 
 const reducer = (state = initState, action) => {
+  let newMessages = [...state.messages];
   switch (action.type) {
     case "ADD_MESSAGE":
-      console.log("message added", action.message);
+      newMessages.push({
+        id: 8,
+        content: action.message
+      });
   }
-  return state;
+  return {
+    ...state,
+    messages: newMessages
+  };
 };
 
 export default reducer;
