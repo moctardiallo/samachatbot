@@ -1,10 +1,21 @@
 .chat-room {
+  position: relative;
   top: 100px;
-  left: 200px;
+  left: 100px;
+  height: 300px;
+}
+
+.messages {
+  position: absolute;
+  top: 0%;
+  left: 0px;
+  max-height: 300px;
   overflow: auto;
 }
 
 .message-input {
+  position: absolute;
+  top: 300px;
 }
 
 .message {

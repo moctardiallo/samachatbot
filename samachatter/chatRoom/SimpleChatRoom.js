@@ -15,8 +15,8 @@ class ChatRoom extends React.Component {
   };
   render() {
     return (
-      <div className="container">
-        <div className="chat-room row section ">
+      <div className="chat-room">
+        <div className="messages container row section ">
           {this.props.messages &&
             this.props.messages.map((message, index) => {
               return (
@@ -33,11 +33,11 @@ class ChatRoom extends React.Component {
                 </div>
               );
             })}
-          <div className="message-input col l12 input-field">
-            <form onSubmit={this.sendMessage}>
-              <input type="text" placeholder="Say something" id="message" />
-            </form>
-          </div>
+        </div>
+        <div className="message-input col l12 input-field">
+          <form onSubmit={this.sendMessage}>
+            <input type="text" placeholder="Say something" id="message" />
+          </form>
         </div>
       </div>
     );
