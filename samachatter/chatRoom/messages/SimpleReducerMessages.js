@@ -1,7 +1,7 @@
 const initState = {
   messages: [
     {
-      id: "user1",
+      id: "user",
       content: "Hello"
     }
   ]
@@ -11,12 +11,10 @@ const reducer = (state = initState, action) => {
   let newMessages = [...state.messages];
   switch (action.type) {
     case "ADD_MESSAGE":
-      newMessages.push({
-        id: 8,
-        content: action.message
-      });
+      newMessages.push(action.message);
     // if (newMessages.length > 6) newMessages.shift(1);
   }
+  console.log(newMessages);
   return {
     ...state,
     messages: newMessages

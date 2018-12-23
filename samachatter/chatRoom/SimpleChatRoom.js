@@ -10,7 +10,11 @@ import { connect } from "react-redux";
 class ChatRoom extends React.Component {
   sendMessage = e => {
     e.preventDefault();
-    this.props.addMessage(document.getElementById("message").value);
+    let message = {
+      id: "user",
+      content: document.getElementById("message").value
+    };
+    this.props.addMessage(message);
     document.getElementById("message").value = "";
   };
   render() {
@@ -22,7 +26,8 @@ class ChatRoom extends React.Component {
               return (
                 <div
                   className={
-                    "message col" + (index % 2 ? " l12" : " l6 offset-l6")
+                    "message col" +
+                    (message.id === "user" ? " l12" : " l6 offset-l6")
                   }
                 >
                   <Message

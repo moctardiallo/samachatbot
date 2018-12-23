@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="App container">
         <div className="row">
-          <div className="col l5">
+          <div className="col l8">
             <ChatRoom key={1} />
           </div>
         </div>
