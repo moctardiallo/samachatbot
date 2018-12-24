@@ -9,9 +9,7 @@ verify_ssl = true
 flask = "*"
 flask-restful = "*"
 flask-sqlalchemy = "*"
-requests = "*"
-beautifulsoup4 = "*"
-lxml = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.6"

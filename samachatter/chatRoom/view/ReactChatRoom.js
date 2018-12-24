@@ -2,12 +2,12 @@ import React from "react";
 
 import "./SimpleChatRoom.css";
 
-import Message from "../message/SimpleMessage";
-import addMessage from "./addMessage/SimpleActionAddMessage";
+import MessageView from "../message/view/ReactChip";
+import addMessage from "../message/add/ReduxAction";
 
 import { connect } from "react-redux";
 
-class ChatRoom extends React.Component {
+class ChatRoomView extends React.Component {
   sendMessage = e => {
     e.preventDefault();
     let message = {
@@ -30,8 +30,9 @@ class ChatRoom extends React.Component {
                     (message.id === "user" ? " l12" : " l6 offset-l6")
                   }
                 >
-                  <Message
-                    message={message.content}
+                  <MessageView
+                    text={message.content}
+                    image={message.image}
                     className="offset-s3"
                     key={message.id}
                   />
@@ -64,4 +65,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChatRoom);
+)(ChatRoomView);

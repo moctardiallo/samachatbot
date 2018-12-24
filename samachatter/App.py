@@ -1,13 +1,8 @@
 from samachatter import app, api
-from flask_restful import Resource
 
+from samachatter.chatRoom.message.view.FlaskRestful import MessageView
 
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}
-
-
-api.add_resource(HelloWorld, '/')
+api.add_resource(MessageView, '/message')
 
 if __name__ == '__main__':
     app.run(debug=True)

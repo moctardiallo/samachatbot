@@ -1,17 +1,16 @@
 import React from "react";
 
 import { Chip } from "react-materialize";
-import Image from "./image/profile.jpg";
 
-const Message = ({ message }) => {
+const MessageView = ({ text, image }) => {
   return (
     <div className="section">
       <Chip>
-        <img src={Image} />
-        {message}
+        <img src={image} />
+        {text}
       </Chip>
     </div>
   );
 };
 
-export default Message;
+export default MessageView;
