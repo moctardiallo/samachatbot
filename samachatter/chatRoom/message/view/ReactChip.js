@@ -2,7 +2,7 @@ import React from "react";
 
 import { Chip } from "react-materialize";
 
-const Message = ({ text, image }) => {
+const MessageView = ({ text, image }) => {
   return (
     <div className="section">
       <Chip>
@@ -13,4 +13,4 @@ const Message = ({ text, image }) => {
   );
 };
 
-export default Message;
+export default MessageView;

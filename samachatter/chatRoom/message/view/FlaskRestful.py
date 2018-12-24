@@ -1,9 +1,9 @@
 from flask_restful import Resource, request
 
 
-class Message(Resource):
+class MessageView(Resource):
     def __init__(self, *args, **kwargs):
-        super(Message, self).__init__(*args, **kwargs)
+        super(MessageView, self).__init__(*args, **kwargs)
         self.messages = {
             'messages': [
                 {
