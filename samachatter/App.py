@@ -1,19 +1,25 @@
 from samachatter import app, api
-from flask_restful import Resource
+from flask_restful import Resource, request
 
 
 class Messages(Resource):
-    def get(self):
-        return {
-            'messages': [{
-                'id': 'user',
-                'content': "hello from flask!"
-            },
+    def __init__(self, *args, **kwargs):
+        super(Messages, self).__init__(*args, **kwargs)
+        self.messages = {
+            'messages': [
                 {
-                'id': 'flask',
-                'content': 'Hello again from flask'
-            }]
+                    'id': 'user',
+                    'content': "hello from flask!"
+                },
+            ]
         }
+
+    def get(self):
+        return self.messages
+
+    def post(self):
+        message = request.get_json()
+        return message
 
 
 api.add_resource(Messages, '/messages')

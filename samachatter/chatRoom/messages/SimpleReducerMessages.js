@@ -14,7 +14,6 @@ const reducer = (state = initState, action) => {
       newMessages.push(action.message);
     // if (newMessages.length > 6) newMessages.shift(1);
   }
-  console.log(newMessages);
   return {
     ...state,
     messages: newMessages

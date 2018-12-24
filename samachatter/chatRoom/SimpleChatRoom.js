@@ -8,27 +8,6 @@ import addMessage from "./addMessage/SimpleActionAddMessage";
 import { connect } from "react-redux";
 
 class ChatRoom extends React.Component {
-  state = {
-    messages: [
-      {
-        id: "user",
-        content: "hello from react"
-      }
-    ]
-  };
-
-  componentDidMount = () => {
-    fetch("http://localhost:5000/messages")
-      .then(response => {
-        return response.json();
-      })
-      .then(json => {
-        this.setState({
-          messages: this.state.messages.concat(json.messages)
-        });
-      });
-  };
-
   sendMessage = e => {
     e.preventDefault();
     let message = {
@@ -42,8 +21,8 @@ class ChatRoom extends React.Component {
     return (
       <div className="chat-room">
         <div className="messages container row section ">
-          {this.state.messages &&
-            this.state.messages.map((message, index) => {
+          {this.props.messages &&
+            this.props.messages.map((message, index) => {
               return (
                 <div
                   className={

@@ -1,16 +1,13 @@
+import axios from "axios";
+
 const addMessage = message => {
   return (dispatch, getState) => {
-    fetch("http://localhost:5000/messages")
-      .then(response => {
-        return response.json();
+    axios.post("http://localhost:5000/messages", message).then(response =>
+      dispatch({
+        type: "ADD_MESSAGE",
+        message: response.data
       })
-      .then(json => {
-        console.log(JSON.stringify(json));
-      });
-    dispatch({
-      type: "ADD_MESSAGE",
-      message
-    });
+    );
   };
 };
 
