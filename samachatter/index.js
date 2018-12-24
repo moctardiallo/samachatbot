@@ -4,11 +4,11 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware } from "redux";
-import reducer from "./chatRoom/messages/SimpleReducerMessages";
+import chatRoomData from "./chatRoom/data/ReduxReducer";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(chatRoomData, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

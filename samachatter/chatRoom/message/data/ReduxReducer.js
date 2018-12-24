@@ -1,13 +1,16 @@
+import Image from "../data/image/profile.jpg";
+
 const initState = {
   messages: [
     {
       id: "user",
-      content: "Hello"
+      content: "Hello",
+      image: Image
     }
   ]
 };
 
-const reducer = (state = initState, action) => {
+const messageData = (state = initState, action) => {
   let newMessages = [...state.messages];
   switch (action.type) {
     case "ADD_MESSAGE":
@@ -20,4 +23,4 @@ const reducer = (state = initState, action) => {
   };
 };
 
-export default reducer;
+export default messageData;

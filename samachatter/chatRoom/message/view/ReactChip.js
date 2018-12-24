@@ -1,14 +1,13 @@
 import React from "react";
 
 import { Chip } from "react-materialize";
-import Image from "./image/profile.jpg";
 
-const Message = ({ message }) => {
+const Message = ({ text, image }) => {
   return (
     <div className="section">
       <Chip>
-        <img src={Image} />
-        {message}
+        <img src={image} />
+        {text}
       </Chip>
     </div>
   );

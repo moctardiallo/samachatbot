@@ -2,8 +2,8 @@ import React from "react";
 
 import "./SimpleChatRoom.css";
 
-import Message from "../message/SimpleMessage";
-import addMessage from "./addMessage/SimpleActionAddMessage";
+import Message from "../message/view/ReactChip";
+import addMessage from "../message/add/ReduxAction";
 
 import { connect } from "react-redux";
 
@@ -31,7 +31,8 @@ class ChatRoom extends React.Component {
                   }
                 >
                   <Message
-                    message={message.content}
+                    text={message.content}
+                    image={message.image}
                     className="offset-s3"
                     key={message.id}
                   />

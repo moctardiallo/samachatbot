@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import ChatRoom from "./chatRoom/SimpleChatRoom";
+import ChatRoom from "./chatRoom/view/ReactChatRoom";
 
 class App extends Component {
   render() {
