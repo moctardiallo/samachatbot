@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Ecoute from "./utilisateur/ecoute/ReactMaterialChip";
 
 import ImageUtilisateur from "./utilisateur/image/profile.jpg";
+import Support from "./utilisateur/parle/support/ReactMaterialInputField";
+import Parle from "./utilisateur/parle/ReactAxios";
 
 class App extends Component {
   state = {
@@ -19,6 +21,7 @@ class App extends Component {
         <div className="row">
           <div className="col l8">
             <Ecoute message={this.state.message} />
+            <Parle />
           </div>
         </div>
       </div>

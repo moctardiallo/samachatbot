@@ -1,8 +1,8 @@
 from samachatter import app, api
 
-from samachatter.chatRoom.message.view.FlaskRestful import MessageView
+from samachatter.utilisateur.parle.destinataire.FlaskRestful import Destinataire
 
-api.add_resource(MessageView, '/message')
+api.add_resource(Destinataire, '/destinataire')
 
 if __name__ == '__main__':
     app.run(debug=True)
