@@ -3,7 +3,7 @@
 class Memoire(object):
     def __init__(self, *args, **kwargs):
         super(Memoire, self).__init__(*args, **kwargs)
-        self.data = {}
+        self.data = {"message": ""}
 
     def retire(self):
         return self.data["message"]
