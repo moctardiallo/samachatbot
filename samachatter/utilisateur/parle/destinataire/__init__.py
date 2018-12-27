@@ -1,0 +1,1 @@
+from . FlaskRestful import Destinataire
