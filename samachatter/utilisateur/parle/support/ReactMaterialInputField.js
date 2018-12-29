@@ -8,7 +8,7 @@ const Support = ({ transmet, au }) => {
           e.preventDefault();
           let target = document.getElementById("support");
           const message = {
-            tu_as_dit: target.value,
+            j_ai_dit: target.value,
             au: au
           };
           transmet(message);
