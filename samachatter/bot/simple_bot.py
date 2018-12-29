@@ -1,4 +1,5 @@
 from samachatter.utilisateur.parle.destinataire import Destinataire
+from samachatter.utilisateur.ecoute.message import j_ai_dit
 
 
 class Bot(Destinataire):
@@ -6,6 +7,5 @@ class Bot(Destinataire):
         super(Bot, self).__init__(*args, **kwargs)
 
     def repond(self):
-        message = self.memoire.retire()
-        message["tu_as_dit"] = "" + message["tu_as_dit"]
+        message = j_ai_dit(self.memoire.message)
         return message

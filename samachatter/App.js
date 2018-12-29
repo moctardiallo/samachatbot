@@ -4,6 +4,7 @@ import Ecoute from "./utilisateur/ecoute/ReactMaterialChip";
 import ImageUtilisateur from "./utilisateur/image/profile.jpg";
 import Support from "./utilisateur/parle/support/ReactMaterialInputField";
 import Parle from "./utilisateur/parle/ReactAxios";
+import Utilisateur from "./utilisateur/ReactMaterializeUtilisateur";
 
 class App extends Component {
   state = {
@@ -20,9 +21,10 @@ class App extends Component {
       <div className="App container">
         <div className="row">
           <div className="col l8">
-            {/* L'Utilisateur */}
-            <Ecoute message={this.state.message} />
-            <Parle au="bot" />
+            <Utilisateur
+              ecoute={<Ecoute message={this.state.message} />}
+              parle={<Parle au="bot" />}
+            />
           </div>
         </div>
       </div>
