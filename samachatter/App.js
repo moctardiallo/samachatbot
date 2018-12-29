@@ -20,8 +20,9 @@ class App extends Component {
       <div className="App container">
         <div className="row">
           <div className="col l8">
+            {/* L'Utilisateur */}
             <Ecoute message={this.state.message} />
-            <Parle />
+            <Parle au="bot" />
           </div>
         </div>
       </div>

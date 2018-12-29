@@ -1,6 +1,6 @@
 import React from "react";
 
-const Support = ({ transmet }) => {
+const Support = ({ transmet, au }) => {
   return (
     <div>
       <form
@@ -8,7 +8,8 @@ const Support = ({ transmet }) => {
           e.preventDefault();
           let target = document.getElementById("support");
           const message = {
-            text: target.value
+            tu_as_dit: target.value,
+            au: au
           };
           transmet(message);
           target.value = "";

@@ -7,4 +7,5 @@ class Bot(Destinataire):
 
     def repond(self):
         message = self.memoire.retire()
+        message["tu_as_dit"] = "" + message["tu_as_dit"]
         return message
