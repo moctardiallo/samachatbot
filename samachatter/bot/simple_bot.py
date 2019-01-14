@@ -7,5 +7,5 @@ class Bot(Destinataire):
         super(Bot, self).__init__(*args, **kwargs)
 
     def repond(self):
-        message = j_ai_dit(self.memoire.message)
+        message = j_ai_dit(self.conversation.message)
         return message

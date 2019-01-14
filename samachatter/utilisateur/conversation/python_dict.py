@@ -1,8 +1,8 @@
 
 
-class Memoire(object):
+class Conversation(object):
     def __init__(self, *args, **kwargs):
-        super(Memoire, self).__init__(*args, **kwargs)
+        super(Conversation, self).__init__(*args, **kwargs)
         self.data = {"message": ""}
 
     def retire(self):
